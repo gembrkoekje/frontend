@@ -1,0 +1,238 @@
+/* Alleen de stijlen die Bootstrap niet zelf heeft */
+
+/* Navigatie */
+
+.bg-navy {
+  background-color: var(--navy);
+}
+
+.brand-title {
+  color: var(--yellow);
+
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+
+  -webkit-text-stroke: 1px var(--blue);
+}
+
+.navbar-nav .nav-link.active {
+  background-color: var(--yellow);
+  color: var(--navy);
+
+  font-weight: 700;
+}
+
+.navbar-nav .nav-link:not(.active):hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Pokéball */
+
+.pokeball {
+  position: relative;
+
+  display: inline-block;
+  flex-shrink: 0;
+
+  background: linear-gradient(
+    to bottom,
+    var(--red) 0 calc(50% - var(--line) / 2),
+    #1a1a1a calc(50% - var(--line) / 2) calc(50% + var(--line) / 2),
+    white calc(50% + var(--line) / 2)
+  );
+
+  border: var(--line) solid #1a1a1a;
+  border-radius: 50%;
+}
+
+.pokeball::after {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 34%;
+  height: 34%;
+
+  background-color: white;
+
+  border: var(--line) solid #1a1a1a;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* Home */
+
+.hero {
+  background: linear-gradient(120deg, var(--red-dark), var(--red) 60%, #ff6a3d);
+}
+
+.hero .lead {
+  max-width: 480px;
+}
+
+.hero-visual {
+  width: 260px;
+  height: 230px;
+}
+
+.hero-visual .pokeball {
+  position: absolute;
+
+  opacity: 0.25;
+}
+
+.hero-visual img {
+  position: relative;
+
+  width: 210px;
+
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.25));
+}
+
+.stat-card-icon {
+  width: 48px;
+  height: 48px;
+
+  color: var(--navy);
+}
+
+/* Pokémon-kaart */
+
+.poke-card {
+  transition: transform 0.15s;
+}
+
+.poke-card:hover {
+  transform: translateY(-3px);
+}
+
+.poke-card-top {
+  height: 150px;
+
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.45), transparent 65%),
+    var(--type-color, #9ca3af);
+}
+
+.poke-card-top img {
+  height: 130px;
+
+  object-fit: contain;
+}
+
+.card-placeholder {
+  min-height: 260px;
+}
+
+.favorite-button {
+  width: 31px;
+  height: 31px;
+
+  padding: 0;
+
+  flex-shrink: 0;
+}
+
+/* Typekleuren */
+
+.type {
+  background-color: var(--type-color, var(--red));
+}
+
+.chip {
+  --bs-btn-color: var(--bs-body-color);
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: var(--bs-border-color);
+  --bs-btn-hover-color: var(--bs-body-color);
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: var(--type-color, var(--red));
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--type-color, var(--red));
+  --bs-btn-active-border-color: var(--type-color, var(--red));
+}
+
+.type-normal { --type-color: #9fa19f; }
+.type-fire { --type-color: #f97316; }
+.type-water { --type-color: #3b82f6; }
+.type-grass { --type-color: #22c55e; }
+.type-electric { --type-color: #eab308; }
+.type-ice { --type-color: #22d3ee; }
+.type-fighting { --type-color: #dc2626; }
+.type-poison { --type-color: #a855f7; }
+.type-ground { --type-color: #b45309; }
+.type-flying { --type-color: #818cf8; }
+.type-psychic { --type-color: #ec4899; }
+.type-bug { --type-color: #84cc16; }
+.type-rock { --type-color: #a8a29e; }
+.type-ghost { --type-color: #6d28d9; }
+.type-dragon { --type-color: #4f46e5; }
+.type-dark { --type-color: #44403c; }
+.type-steel { --type-color: #64748b; }
+.type-fairy { --type-color: #f472b6; }
+
+/* Teams */
+
+.team-progress {
+  height: 6px;
+}
+
+.team-slot {
+  width: 52px;
+  height: 52px;
+}
+
+.empty-slot {
+  min-height: 290px;
+}
+
+.empty-slot:hover {
+  color: var(--red) !important;
+
+  border-color: var(--red) !important;
+}
+
+.side-panel {
+  top: 100px;
+}
+
+.pokemon-row-image {
+  width: 48px;
+  height: 48px;
+}
+
+/* Pokémon-detail */
+
+.detail-banner {
+  background: radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.4), transparent 45%),
+    var(--type-color, var(--red));
+}
+
+.detail-banner .type {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.detail-actions {
+  max-width: 380px;
+}
+
+.detail-image {
+  width: 280px;
+}
+
+.stat-progress {
+  height: 8px;
+}
+
+.stat-bar {
+  background: linear-gradient(90deg, var(--blue), #5aa0e6);
+}
+
+@media (max-width: 575.98px) {
+  .team-slot {
+    width: 40px;
+    height: 40px;
+  }
+}
